@@ -1,0 +1,10 @@
+{
+  "useTabs": true,
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "printWidth": 60
+}
