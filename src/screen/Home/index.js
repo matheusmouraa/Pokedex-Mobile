@@ -1,12 +1,12 @@
 import React from "react";
-import { Text } from "react-native";
 
-import { Container } from "./styles";
+import { Container, HomeImage } from "./styles";
+import PokeLogo from "../../assets/pokemon-logo.jpg";
 
 export function Home() {
 	return (
 		<Container>
-			<Text>dasldslasdlaslda</Text>
+			<HomeImage src={PokeLogo} />
 		</Container>
 	);
 }
