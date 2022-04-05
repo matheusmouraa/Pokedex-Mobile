@@ -1,12 +1,19 @@
 import React from "react";
 
-import { Container, HomeImage } from "./styles";
-import PokeLogo from "../../assets/pokemon-logo.jpg";
+import {
+	Container,
+	BorderImage,
+	TitleImage,
+} from "./styles";
+
+import PokeLogo from "../../assets/pokemon-logo.png";
 
 export function Home() {
 	return (
 		<Container>
-			<HomeImage src={PokeLogo} />
+			<BorderImage>
+				<TitleImage source={PokeLogo} />
+			</BorderImage>
 		</Container>
 	);
 }
