@@ -14,7 +14,7 @@ export function AppRoutes() {
 			screenOptions={{
 				headerShown: false,
 				contentStyle: {
-					backgroundColor: theme.colors.secondary90,
+					backgroundColor: "translucit",
 				},
 			}}
 		>

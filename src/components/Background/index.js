@@ -8,8 +8,8 @@ export function Background({ children }) {
 		<LinearGradient
 			style={{ flex: 1 }}
 			colors={[
-				theme.colors.secondary90,
-				theme.colors.secondary70,
+				theme.colors.secondary80,
+				theme.colors.secondary100,
 			]}
 		>
 			{children}
