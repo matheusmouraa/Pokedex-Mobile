@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import {
 	Container,
-	BorderImage,
+	TesteScroll,
 	TitleImage,
 	PokeList,
 } from "./styles";
@@ -17,24 +17,18 @@ import { api } from "../../services/api";
 
 export function Home() {
 	const [pokemons, setPokemons] = useState([]);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	async function getPokemons() {
-		try {
-			const response = await api.get(
-				"pokemon-form?limit=10"
-			);
+		const response = await api.get("pokemon-form?limit=10");
+		const results = response.data.results;
 
-			setPokemons(response.data.results);
-			setLoading(false);
-		} catch (error) {
-			console.log(error);
-		}
+		setLoading(false);
 	}
 
 	useEffect(() => {
 		getPokemons();
-	});
+	}, []);
 
 	return (
 		<Container>
@@ -42,14 +36,19 @@ export function Home() {
 			{loading ? (
 				<Load />
 			) : (
-				<PokeList
-					data={pokemons}
-					keyExtractor={(item) => item.key}
-					renderItem={(item) => {
-						<Card data={item} />;
-					}}
-					showsHorizontalScrollIndicator={false}
-				/>
+				// <PokeList
+				// 	data={pokemons}
+				// 	keyExtractor={(item) => item.id}
+				// 	renderItem={(item) => {
+				// 		<Text style={{ fontSize: 21 }}>
+				// 			{item.name}
+				// 		</Text>;
+				// 	}}
+				// 	showsHorizontalScrollIndicator={false}
+				// />
+				<TesteScroll>
+					<Card />
+				</TesteScroll>
 			)}
 			{/* <Appointment
 								data={item}

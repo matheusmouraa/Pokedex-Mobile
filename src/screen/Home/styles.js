@@ -19,6 +19,11 @@ export const TitleImage = styled.Image`
 
 // `
 
+export const TesteScroll = styled.ScrollView`
+	margin-top: 45px;
+	width: 90%;
+`;
+
 export const PokeList = styled.FlatList`
 	margin-top: 20px;
 `;
