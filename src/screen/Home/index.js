@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import {
-	Container,
-	TesteScroll,
-	TitleImage,
-	PokeList,
-} from "./styles";
+import { Container, TitleImage, PokeList } from "./styles";
+
+import Grid from "react-native-grid-component";
 
 import PokeLogo from "../../assets/pokemon-logo.png";
 
 import { Load } from "../../components/Load";
-
 import { Card } from "../Card";
 
 import { api } from "../../services/api";
@@ -21,7 +17,7 @@ export function Home() {
 
 	async function getPokemons() {
 		const response = await api.get("pokemon-form?limit=10");
-		const results = response.data.results;
+		setPokemons(response.data.results);
 
 		setLoading(false);
 	}
@@ -36,30 +32,18 @@ export function Home() {
 			{loading ? (
 				<Load />
 			) : (
-				// <PokeList
-				// 	data={pokemons}
-				// 	keyExtractor={(item) => item.id}
-				// 	renderItem={(item) => {
-				// 		<Text style={{ fontSize: 21 }}>
-				// 			{item.name}
-				// 		</Text>;
-				// 	}}
-				// 	showsHorizontalScrollIndicator={false}
-				// />
-				<TesteScroll>
-					<Card />
-				</TesteScroll>
+				<Grid
+					data={pokemons}
+					renderItem={(item) => {
+						return <Card data={item} />;
+					}}
+					style={{
+						paddingBottom: 160,
+					}}
+					numColumns={3}
+					showsVerticalScrollIndicator={false}
+				/>
 			)}
-			{/* <Appointment
-								data={item}
-								activeOpacity={0.8}
-								onPress={() =>
-									function handleAppointmentDetails(guildSelected) {
-										navigation.navigate("AppointmentDetails", {
-											guildSelected,
-										});
-									}
-									handleAppointmentDetails(item) */}
 		</Container>
 	);
 }

@@ -1,20 +1,23 @@
 import styled from "styled-components/native";
+import { theme } from "../../global/styles/theme";
 
 export const Container = styled.TouchableOpacity`
+	margin: 5px;
 	justify-content: center;
 	align-items: center;
-	width: 35%;
+	width: 32%;
 	height: 140px;
 	border: 1px solid;
 	border-radius: 8px;
 `;
 
 export const PokeImage = styled.Image`
-	width: 80px;
-	height: 130px;
+	width: 100px;
+	height: 125px;
 `;
 
 export const Name = styled.Text`
-	font-size: 12px;
-	margin-top: 16px;
+	font-family: ${theme.fonts.title500};
+	font-size: 14px;
+	padding-bottom: 10px;
 `;

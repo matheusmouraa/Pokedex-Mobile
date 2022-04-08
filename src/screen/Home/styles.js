@@ -13,11 +13,8 @@ export const TitleImage = styled.Image`
 	margin-top: ${30 + getStatusBarHeight()}px;
 	width: 90%;
 	height: 135px;
+	margin-bottom: 20px;
 `;
-
-// export const Filter = styled.SearchBar`
-
-// `
 
 export const TesteScroll = styled.ScrollView`
 	margin-top: 45px;

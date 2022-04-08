@@ -1,12 +1,11 @@
 import React from "react";
-import { ActivityIndicator } from "react-native";
 
 import { Message, LoadingIcon, Container } from "./styles";
 
-export function Load() {
+export function Load({ size }) {
 	return (
 		<Container>
-			<ActivityIndicator size='large' />
+			<LoadingIcon size={size} />
 			<Message>Loading...</Message>
 		</Container>
 	);
