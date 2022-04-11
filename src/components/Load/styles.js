@@ -1,5 +1,7 @@
 import styled from "styled-components/native";
 
+import { RFValue } from "react-native-responsive-fontsize";
+
 import { theme } from "../../global/styles/theme";
 
 export const Container = styled.View`
@@ -8,10 +10,8 @@ export const Container = styled.View`
 	align-items: center;
 `;
 
-export const LoadingIcon = styled.ActivityIndicator`
-	color: ${theme.colors.line};
-`;
-
 export const Message = styled.Text`
-	font-size: 12px;
+	margin-top: 10px;
+	font-size: ${RFValue(12)}px;
+	color: ${theme.colors.highlight};
 `;

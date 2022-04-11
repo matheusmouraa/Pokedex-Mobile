@@ -1,8 +1,11 @@
 import styled from "styled-components/native";
+
+import { RFValue } from "react-native-responsive-fontsize";
+
 import { theme } from "../../global/styles/theme";
 
 export const Container = styled.TouchableOpacity`
-	margin: 5px;
+	margin: 3px;
 	justify-content: center;
 	align-items: center;
 	width: 32%;
@@ -12,12 +15,13 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const PokeImage = styled.Image`
-	width: 100px;
+	margin-top: 7px;
+	width: 120px;
 	height: 125px;
 `;
 
 export const Name = styled.Text`
 	font-family: ${theme.fonts.title500};
-	font-size: 14px;
+	font-size: ${RFValue(14)}px;
 	padding-bottom: 10px;
 `;

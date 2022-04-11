@@ -2,9 +2,8 @@ import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { theme } from "../global/styles/theme";
-
-import { Home } from "../screen/Home";
+import { Home } from "../screens/Home";
+import { PokemonInfo } from "../screens/PokemonInfo";
 
 export function AppRoutes() {
 	const { Navigator, Screen } =
@@ -19,6 +18,7 @@ export function AppRoutes() {
 			}}
 		>
 			<Screen name='Home' component={Home} />
+			{/* <Screen name='PokemonInfo' component={PokemonInfo} /> */}
 		</Navigator>
 	);
 }

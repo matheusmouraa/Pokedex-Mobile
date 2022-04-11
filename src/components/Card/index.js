@@ -6,7 +6,7 @@ import { Load } from "../../components/Load";
 
 import axios from "axios";
 
-export function Card({ data }) {
+export function Card({ data, onPress }) {
 	const [pokemon, setPokemon] = useState({});
 	const [loading, setLoading] = useState(true);
 
@@ -21,7 +21,7 @@ export function Card({ data }) {
 	}, [pokemon]);
 
 	return (
-		<Container activeOpacity={0.6}>
+		<Container onPress={onPress} activeOpacity={0.75}>
 			{loading ? (
 				<Load />
 			) : (

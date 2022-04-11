@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
 
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
-
-import { theme } from "../../global/styles/theme";
+import Grid from "react-native-grid-component";
 
 export const Container = styled.View`
 	flex: 1;
@@ -16,11 +15,7 @@ export const TitleImage = styled.Image`
 	margin-bottom: 20px;
 `;
 
-export const TesteScroll = styled.ScrollView`
-	margin-top: 45px;
-	width: 90%;
-`;
-
-export const PokeList = styled.FlatList`
-	margin-top: 20px;
+export const PokeList = styled(Grid)`
+	padding-bottom: 160;
+	margin-right: 10;
 `;
