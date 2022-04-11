@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
+
 import Grid from "react-native-grid-component";
 
 export const Container = styled.View`

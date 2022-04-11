@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { Container, PokeImage, Name } from "./styles";
+import { Container, PokemonImage, Name } from "./styles";
 
 import { Load } from "../../components/Load";
 
 import axios from "axios";
 
-export function Card({ data, onPress }) {
+export function Card({ data, ...rest }) {
 	const [pokemon, setPokemon] = useState({});
 	const [loading, setLoading] = useState(true);
 
@@ -21,12 +21,16 @@ export function Card({ data, onPress }) {
 	}, [pokemon]);
 
 	return (
-		<Container onPress={onPress} activeOpacity={0.75}>
+		<Container
+			activeOpacity={0.75}
+			{...rest}
+			disabled={loading}
+		>
 			{loading ? (
-				<Load />
+				<Load size='medium' />
 			) : (
 				<>
-					<PokeImage
+					<PokemonImage
 						source={{ uri: pokemon.sprites.front_default }}
 					/>
 					<Name>{data.name}</Name>

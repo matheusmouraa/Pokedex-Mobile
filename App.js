@@ -11,10 +11,11 @@ import {
 	Inter_500Medium,
 } from "@expo-google-fonts/inter";
 
-import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 
 import { Background } from "./src/components/Background";
+import { Load } from "./src/components/Load";
+
 import { StatusBar } from "expo-status-bar";
 import { Routes } from "./src/routes";
 
@@ -29,7 +30,7 @@ export default function App() {
 	});
 
 	if (!fontsLoaded) {
-		return <AppLoading />;
+		return <Load size='large' />;
 	}
 
 	return (

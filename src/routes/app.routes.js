@@ -18,7 +18,7 @@ export function AppRoutes() {
 			}}
 		>
 			<Screen name='Home' component={Home} />
-			{/* <Screen name='PokemonInfo' component={PokemonInfo} /> */}
+			<Screen name='PokemonInfo' component={PokemonInfo} />
 		</Navigator>
 	);
 }

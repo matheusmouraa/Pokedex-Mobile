@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { Container, TitleImage } from "./styles";
-
 import { useNavigation } from "@react-navigation/native";
+import { api } from "../../services/api";
 import Grid from "react-native-grid-component";
 
 import PokeLogo from "../../assets/pokemon-logo.png";
@@ -10,7 +9,7 @@ import PokeLogo from "../../assets/pokemon-logo.png";
 import { Load } from "../../components/Load";
 import { Card } from "../../components/Card";
 
-import { api } from "../../services/api";
+import { Container, TitleImage, PokeList } from "./styles";
 
 export function Home() {
 	const navigation = useNavigation();
@@ -19,8 +18,7 @@ export function Home() {
 	const [loading, setLoading] = useState(true);
 
 	function handlePokemonInfo(pokemonSelected) {
-		console.log("aaaaaaaaaaa");
-		// navigation.navigate("PokemonInfo", { pokemonSelected });
+		navigation.navigate("PokemonInfo", { pokemonSelected });
 	}
 
 	async function getPokemons() {

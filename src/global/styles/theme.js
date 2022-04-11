@@ -7,7 +7,7 @@ export const theme = {
 		secondary80: "#FFF323",
 
 		overlay: "rgba(0,0,0,0.7)",
-		highlight: "#CBD3F2",
+		highlight: "#383838",
 		heading: "#fff",
 		line: "#B20600",
 	},

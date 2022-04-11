@@ -14,14 +14,15 @@ export const Container = styled.TouchableOpacity`
 	border-radius: 8px;
 `;
 
-export const PokeImage = styled.Image`
+export const PokemonImage = styled.Image`
 	margin-top: 7px;
 	width: 120px;
 	height: 125px;
 `;
 
 export const Name = styled.Text`
+	color: ${theme.colors.highlight};
 	font-family: ${theme.fonts.title500};
 	font-size: ${RFValue(14)}px;
-	padding-bottom: 10px;
+	padding-bottom: 12px;
 `;
