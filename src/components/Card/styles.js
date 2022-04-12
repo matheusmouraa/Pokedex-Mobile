@@ -10,8 +10,9 @@ export const Container = styled.TouchableOpacity`
 	align-items: center;
 	width: 32%;
 	height: 140px;
-	border: 1px solid;
+	border: 2px solid;
 	border-radius: 8px;
+	border-color: ${theme.colors.primary};
 `;
 
 export const PokemonImage = styled.Image`
@@ -24,5 +25,5 @@ export const Name = styled.Text`
 	color: ${theme.colors.highlight};
 	font-family: ${theme.fonts.title500};
 	font-size: ${RFValue(14)}px;
-	padding-bottom: 12px;
+	padding-bottom: 13px;
 `;

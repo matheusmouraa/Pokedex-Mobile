@@ -24,11 +24,6 @@ export const PokemonName = styled.Text`
 	font-size: ${RFValue(20)}px;
 	margin-top: 15px;
 `;
-
-export const SkillList = styled.FlatList`
-	margin-top: 10px;
-`;
-
 export const SkillName = styled.Text`
 	font-family: ${theme.fonts.title700};
 	font-size: ${RFValue(15)}px;

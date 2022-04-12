@@ -5,11 +5,11 @@ import { theme } from "../../global/styles/theme";
 
 import { Message, Container } from "./styles";
 
-export function Load({ size }) {
+export function Load({ ...rest }) {
 	return (
 		<Container>
 			<ActivityIndicator
-				size={size}
+				size='small'
 				color={theme.colors.primary}
 			/>
 			<Message>Loading...</Message>

@@ -27,11 +27,13 @@ export function Card({ data, ...rest }) {
 			disabled={loading}
 		>
 			{loading ? (
-				<Load size='medium' />
+				<Load size='small' />
 			) : (
 				<>
 					<PokemonImage
-						source={{ uri: pokemon.sprites.front_default }}
+						source={{
+							uri: pokemon.sprites.front_default,
+						}}
 					/>
 					<Name>{data.name}</Name>
 				</>

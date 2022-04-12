@@ -4,6 +4,8 @@ import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 import Grid from "react-native-grid-component";
 
+export const ScrollPage = styled.ScrollView``;
+
 export const Container = styled.View`
 	flex: 1;
 	align-items: center;
@@ -14,6 +16,23 @@ export const TitleImage = styled.Image`
 	width: 90%;
 	height: 135px;
 	margin-bottom: 20px;
+`;
+
+export const InputView = styled.View`
+	flex-direction: row;
+`;
+
+export const SearchInput = styled.TextInput`
+	margin: 10px;
+	height: 45px;
+	width: 60%;
+	border: 2px solid;
+	border-radius: 8px;
+	text-align: center;
+`;
+
+export const ClearSearch = styled.TouchableOpacity`
+	position: absolute;
 `;
 
 export const PokeList = styled(Grid)`
