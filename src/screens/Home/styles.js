@@ -3,8 +3,11 @@ import styled from "styled-components/native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 import Grid from "react-native-grid-component";
+import { theme } from "../../global/styles/theme";
 
-export const ScrollPage = styled.ScrollView``;
+export const ScrollPage = styled.SafeAreaView`
+	flex: 1;
+`;
 
 export const Container = styled.View`
 	flex: 1;
@@ -29,10 +32,13 @@ export const SearchInput = styled.TextInput`
 	border: 2px solid;
 	border-radius: 8px;
 	text-align: center;
+	border-color: ${theme.colors.primary};
 `;
 
 export const ClearSearch = styled.TouchableOpacity`
 	position: absolute;
+	margin-top: ${getStatusBarHeight() - 10}px;
+	margin-left: 225px;
 `;
 
 export const PokeList = styled(Grid)`

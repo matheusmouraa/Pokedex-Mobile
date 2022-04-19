@@ -4,6 +4,14 @@ import { useNavigation } from "@react-navigation/native";
 import Grid from "react-native-grid-component";
 import { api } from "../../services/api";
 
+import PokeLogo from "../../assets/pokemon-logo.png";
+import { AntDesign } from "@expo/vector-icons";
+
+import { Load } from "../../components/Load";
+import { Card } from "../../components/Card";
+
+import { theme } from "../../global/styles/theme";
+
 import {
 	Container,
 	ScrollPage,
@@ -13,12 +21,6 @@ import {
 	ClearSearch,
 } from "./styles";
 
-import PokeLogo from "../../assets/pokemon-logo.png";
-import { AntDesign } from "@expo/vector-icons";
-
-import { Load } from "../../components/Load";
-import { Card } from "../../components/Card";
-
 export function Home() {
 	const navigation = useNavigation();
 
@@ -26,13 +28,10 @@ export function Home() {
 	const [loading, setLoading] = useState(true);
 	const [search, setSearch] = useState("");
 
-	// function handleSearch(text) {
-	// 	const formattedQuery = text.toLowerCase();
-	// 	const data = filter(this.state.fullData, (user) => {
-	// 		return this.contains(user, formattedQuery);
-	// 	});
-	// 	this.setState({ data, query: text });
-	// }
+	function handleSearch(text) {
+		setSearch(text);
+		console.log(search);
+	}
 
 	function ClearSearchInput() {
 		setSearch("");
@@ -62,7 +61,7 @@ export function Home() {
 					<SearchInput
 						autoCapitalize='none'
 						autoCorrect={false}
-						onChange={setSearch}
+						onChangeText={(text) => handleSearch(text)}
 						value={search}
 						placeholder='Search'
 					/>
@@ -73,7 +72,7 @@ export function Home() {
 						<AntDesign
 							name='closecircle'
 							size={20}
-							color='black'
+							color={theme.colors.primary}
 						/>
 					</ClearSearch>
 				</InputView>

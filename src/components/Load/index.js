@@ -5,7 +5,7 @@ import { theme } from "../../global/styles/theme";
 
 import { Message, Container } from "./styles";
 
-export function Load({ ...rest }) {
+export function Load() {
 	return (
 		<Container>
 			<ActivityIndicator
