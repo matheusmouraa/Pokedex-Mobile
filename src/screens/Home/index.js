@@ -25,12 +25,23 @@ export function Home() {
 	const navigation = useNavigation();
 
 	const [pokemons, setPokemons] = useState([]);
+	const [pokemonsFillter, setPokemonsFillter] = useState(
+		[]
+	);
 	const [loading, setLoading] = useState(true);
 	const [search, setSearch] = useState("");
 
 	function handleSearch(text) {
-		setSearch(text);
-		console.log(search);
+		setLoading(true);
+		const formattedQuery = text.toLowerCase();
+		setSearch(formattedQuery);
+
+		setPokemonsFillter(
+			pokemons.filter((item) =>
+				item.name.includes(formattedQuery)
+			)
+		);
+		setLoading(false);
 	}
 
 	function ClearSearchInput() {
@@ -42,9 +53,8 @@ export function Home() {
 	}
 
 	async function getPokemons() {
-		const response = await api.get("pokemon-form?limit=5");
+		const response = await api.get("pokemon-form?limit=50");
 		setPokemons(response.data.results);
-
 		setLoading(false);
 	}
 
@@ -80,7 +90,7 @@ export function Home() {
 					<Load />
 				) : (
 					<Grid
-						data={pokemons}
+						data={search == "" ? pokemons : pokemonsFillter}
 						renderItem={(item) => {
 							return (
 								<Card
