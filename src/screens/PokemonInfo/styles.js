@@ -17,15 +17,3 @@ export const PokemonImage = styled.Image`
 	width: 90%;
 	height: 320px;
 `;
-
-export const PokemonName = styled.Text`
-	color: ${theme.colors.highlight};
-	font-family: ${theme.fonts.title700};
-	font-size: ${RFValue(20)}px;
-	margin-top: 15px;
-`;
-export const SkillName = styled.Text`
-	font-family: ${theme.fonts.title700};
-	font-size: ${RFValue(15)}px;
-	margin-top: 15px;
-`;

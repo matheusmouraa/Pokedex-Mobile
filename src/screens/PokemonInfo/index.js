@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { useRoute } from "@react-navigation/native";
 import axios from "axios";
+import { useRoute } from "@react-navigation/native";
 
 import { Load } from "../../components/Load";
+import { Header } from "../../components/Header";
 
-import {
-	Container,
-	PokemonImage,
-	PokemonName,
-} from "./styles";
+import { Container, PokemonImage } from "./styles";
 
 export function PokemonInfo() {
 	const route = useRoute();
@@ -28,23 +25,19 @@ export function PokemonInfo() {
 		getPokeInfos();
 	}, [pokemon]);
 
-	return loading ? (
-		<Load size='large' />
-	) : (
+	return (
 		<Container>
-			<PokemonImage
-				source={{ uri: pokemon.sprites.front_default }}
-			/>
+			{loading ? (
+				<Load />
+			) : (
+				<>
+					<Header name={pokemon.name} />
 
-			<PokemonName>{pokemon.name}</PokemonName>
-
-			{/* <Grid
-				data={pokemon.abilities}
-				renderItem={(item) => {
-					<SkillName>{item.ability.name}</SkillName>;
-				}}
-				numColumns={1}
-			/> */}
+					<PokemonImage
+						source={{ uri: pokemon.sprites.front_default }}
+					/>
+				</>
+			)}
 		</Container>
 	);
 }

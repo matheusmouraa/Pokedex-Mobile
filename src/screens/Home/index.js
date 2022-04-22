@@ -53,14 +53,14 @@ export function Home() {
 	}
 
 	async function getPokemons() {
-		const response = await api.get("pokemon-form?limit=50");
+		const response = await api.get("pokemon-form?limit=15");
 		setPokemons(response.data.results);
 		setLoading(false);
 	}
 
 	useEffect(() => {
 		getPokemons();
-	}, []);
+	}, [pokemonsFillter]);
 
 	return (
 		<ScrollPage>

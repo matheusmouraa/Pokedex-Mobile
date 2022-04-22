@@ -23,11 +23,11 @@ export function Card({ data, ...rest }) {
 	return (
 		<Container
 			activeOpacity={0.75}
-			{...rest}
 			disabled={loading}
+			{...rest}
 		>
 			{loading ? (
-				<Load size='small' />
+				<Load />
 			) : (
 				<>
 					<PokemonImage

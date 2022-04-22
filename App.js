@@ -30,7 +30,7 @@ export default function App() {
 	});
 
 	if (!fontsLoaded) {
-		return <Load size='large' />;
+		return <Load />;
 	}
 
 	return (
