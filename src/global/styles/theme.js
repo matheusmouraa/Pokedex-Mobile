@@ -9,7 +9,7 @@ export const theme = {
 		overlay: "rgba(0,0,0,0.7)",
 		highlight: "#383838",
 		heading: "#fff",
-		line: "#B20600",
+		backgroundAbout: "#B20600",
 	},
 
 	fonts: {
