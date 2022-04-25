@@ -32,9 +32,9 @@ export function Home() {
 	const [search, setSearch] = useState("");
 
 	function handleSearch(text) {
+		setSearch(text);
 		setLoading(true);
 		const formattedQuery = text.toLowerCase();
-		setSearch(formattedQuery);
 
 		setPokemonsFillter(
 			pokemons.filter((item) =>
@@ -60,7 +60,7 @@ export function Home() {
 
 	useEffect(() => {
 		getPokemons();
-	}, [pokemonsFillter]);
+	}, []);
 
 	return (
 		<ScrollPage>
@@ -101,6 +101,9 @@ export function Home() {
 						}}
 						numColumns={3}
 						showsVerticalScrollIndicator={false}
+						contentContainerStyle={{
+							paddingVertical: 29,
+						}}
 					/>
 				)}
 			</Container>

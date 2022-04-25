@@ -1,13 +1,14 @@
 import React from "react";
 
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
 import {
 	Container,
 	ReturnButton,
 	PokeName,
 } from "./styles";
+import { theme } from "../../global/styles/theme";
 
 export function Header({ name }) {
 	const navigation = useNavigation();
@@ -24,8 +25,8 @@ export function Header({ name }) {
 			>
 				<Ionicons
 					name='arrow-back'
-					size={28}
-					color='black'
+					size={30}
+					color={theme.colors.primary}
 				/>
 			</ReturnButton>
 

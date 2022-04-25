@@ -13,7 +13,7 @@ export const Container = styled.View`
 `;
 
 export const PokemonImage = styled.Image`
-	margin-top: ${getStatusBarHeight() + 70}px;
+	margin-top: 40px;
 	width: 90%;
 	height: 320px;
 `;

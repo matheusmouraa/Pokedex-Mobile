@@ -23,7 +23,7 @@ export function PokemonInfo() {
 
 	useEffect(() => {
 		getPokeInfos();
-	}, [pokemon]);
+	}, []);
 
 	return (
 		<Container>

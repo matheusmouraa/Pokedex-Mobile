@@ -7,12 +7,13 @@ import { theme } from "../../global/styles/theme";
 
 export const Container = styled.View`
 	width: 100%;
-	height: 60px;
+	height: 65px;
 	margin-top: ${getStatusBarHeight()}px;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
-	border: 2px solid black;
+	border: 2px solid ${theme.colors.primary};
+	border-radius: 5px;
 `;
 
 export const ReturnButton = styled.TouchableOpacity`
@@ -20,7 +21,10 @@ export const ReturnButton = styled.TouchableOpacity`
 `;
 
 export const PokeName = styled.Text`
-	font-size: ${RFValue(16)}px;
+	flex: 1;
+	text-align: center;
+	margin-right: 45px;
+	font-size: ${RFValue(18)}px;
 	font-family: ${theme.fonts.title700};
-	color: #000;
+	color: ${theme.colors.highlight};
 `;
