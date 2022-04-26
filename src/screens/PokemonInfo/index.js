@@ -5,12 +5,14 @@ import axios from "axios";
 
 import { Load } from "../../components/Load";
 import { Header } from "../../components/Header";
+import { TypeCard } from "../../components/TypeCard";
 
 import {
 	Container,
 	PokemonImage,
 	InfoContainer,
 	Title,
+	TypesList,
 	Content,
 	TextView,
 	LeftText,
@@ -52,6 +54,16 @@ export function PokemonInfo() {
 
 					<InfoContainer>
 						<Title>About</Title>
+						<TypesList>
+							{pokemon.types.map((item, key) => {
+								return (
+									<TypeCard
+										type={item.type.name}
+										key={key}
+									/>
+								);
+							})}
+						</TypesList>
 						<Content>
 							<TextView>
 								<LeftText>Height:</LeftText>

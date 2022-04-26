@@ -24,12 +24,19 @@ export const InfoContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-	margin: 20px 0;
+	margin-top: 15px;
+	margin-bottom: 12px;
 	font-size: ${RFValue(20)}px;
 	font-weight: bold;
 	font-family: ${theme.fonts.title700};
 	color: ${theme.colors.heading};
 	align-self: center;
+`;
+
+export const TypesList = styled.View`
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 `;
 
 export const Content = styled.View`
