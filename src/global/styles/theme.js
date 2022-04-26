@@ -6,10 +6,9 @@ export const theme = {
 		secondary90: "#FEB139",
 		secondary80: "#ffdd00",
 
-		overlay: "rgba(0,0,0,0.7)",
 		highlight: "#383838",
 		heading: "#fff",
-		backgroundAbout: "#B20600",
+		subtitle: "#747476",
 	},
 
 	fonts: {

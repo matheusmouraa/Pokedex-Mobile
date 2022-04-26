@@ -26,5 +26,5 @@ export const PokeName = styled.Text`
 	margin-right: 45px;
 	font-size: ${RFValue(18)}px;
 	font-family: ${theme.fonts.title700};
-	color: ${theme.colors.highlight};
+	color: ${theme.colors.primary};
 `;

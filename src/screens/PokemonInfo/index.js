@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import axios from "axios";
 import { useRoute } from "@react-navigation/native";
+import axios from "axios";
 
 import { Load } from "../../components/Load";
 import { Header } from "../../components/Header";
@@ -11,6 +11,8 @@ import {
 	PokemonImage,
 	InfoContainer,
 	Title,
+	Content,
+	TextView,
 	LeftText,
 	RightText,
 } from "./styles";
@@ -23,7 +25,11 @@ export function PokemonInfo() {
 	const [loading, setLoading] = useState(true);
 
 	async function getPokeInfos() {
-		const response = await axios.get(pokemonSelected.url);
+		const urlRefactor = pokemonSelected.url.replace(
+			"-form",
+			""
+		);
+		const response = await axios.get(urlRefactor);
 		setPokemon(response.data);
 		setLoading(false);
 	}
@@ -46,9 +52,40 @@ export function PokemonInfo() {
 
 					<InfoContainer>
 						<Title>About</Title>
-
-						<LeftText>{pokemon.weight}</LeftText>
-						<RightText>{pokemon.height}</RightText>
+						<Content>
+							<TextView>
+								<LeftText>Height:</LeftText>
+								<RightText>{pokemon.height}</RightText>
+							</TextView>
+							<TextView>
+								<LeftText>Weight:</LeftText>
+								<RightText>{pokemon.weight}</RightText>
+							</TextView>
+							<TextView>
+								<LeftText>Hp:</LeftText>
+								<RightText>
+									{pokemon.stats[0].base_stat}
+								</RightText>
+							</TextView>
+							<TextView>
+								<LeftText>Attack:</LeftText>
+								<RightText>
+									{pokemon.stats[1].base_stat}
+								</RightText>
+							</TextView>
+							<TextView>
+								<LeftText>Defense:</LeftText>
+								<RightText>
+									{pokemon.stats[2].base_stat}
+								</RightText>
+							</TextView>
+							<TextView>
+								<LeftText>Speed:</LeftText>
+								<RightText>
+									{pokemon.stats[5].base_stat}
+								</RightText>
+							</TextView>
+						</Content>
 					</InfoContainer>
 				</>
 			)}
