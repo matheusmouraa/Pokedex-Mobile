@@ -23,9 +23,15 @@ export const InfoContainer = styled.View`
 	border-top-right-radius: 50px;
 `;
 
+export const TypesList = styled.View`
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 4px;
+`;
+
 export const Title = styled.Text`
-	margin-top: 15px;
-	margin-bottom: 12px;
 	font-size: ${RFValue(20)}px;
 	font-weight: bold;
 	font-family: ${theme.fonts.title700};
@@ -33,15 +39,10 @@ export const Title = styled.Text`
 	align-self: center;
 `;
 
-export const TypesList = styled.View`
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-`;
-
 export const Content = styled.View`
 	flex-direction: column;
 	margin-left: 30px;
+	margin-top: 25px;
 `;
 
 export const TextView = styled.View`

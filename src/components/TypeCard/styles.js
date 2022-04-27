@@ -1,5 +1,6 @@
-import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
+
+import { RFValue } from "react-native-responsive-fontsize";
 import { getColorFromType } from "../../utils/types";
 
 export const Container = styled.View`
@@ -10,7 +11,7 @@ export const Container = styled.View`
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 8px;
-	margin-right: 8px;
+	margin-right: ${({ align }) => (align ? 0 : 8)}px;
 `;
 
 export const TypeName = styled.Text`

@@ -53,17 +53,22 @@ export function PokemonInfo() {
 					/>
 
 					<InfoContainer>
-						<Title>About</Title>
 						<TypesList>
 							{pokemon.types.map((item, key) => {
 								return (
 									<TypeCard
 										type={item.type.name}
 										key={key}
+										align={
+											pokemon.types.length > 1
+												? false
+												: true
+										}
 									/>
 								);
 							})}
 						</TypesList>
+						<Title>About</Title>
 						<Content>
 							<TextView>
 								<LeftText>Height:</LeftText>

@@ -53,7 +53,9 @@ export function Home() {
 	}
 
 	async function getPokemons() {
-		const response = await api.get("pokemon-form?limit=15");
+		const response = await api.get(
+			"pokemon-form?limit=151"
+		);
 		setPokemons(response.data.results);
 		setLoading(false);
 	}
@@ -99,6 +101,7 @@ export function Home() {
 								/>
 							);
 						}}
+						initialNumToRender={5}
 						numColumns={3}
 						showsVerticalScrollIndicator={false}
 						contentContainerStyle={{
